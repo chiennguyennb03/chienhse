@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chienhse.vn</title>
     
-    <!-- Google Fonts: Inter -->
+    <title>Nguyễn Ngọc Chiến - ChienHSE | Giám sát An toàn lao động</title>
+    <meta name="description" content="Portfolio của Nguyễn Ngọc Chiến (ChienHSE) - Thủ khoa Kỹ thuật Bảo hộ lao động. Chuyên gia quản lý an toàn và ứng dụng dữ liệu (Power BI) vào thực tế HSE.">
+    <meta name="keywords" content="nguyễn ngọc chiến, chienhse, chiếnhse, chiến-hse, chiến an toàn lao động, giám sát an toàn, HSE officer, Power BI HSE, an toàn vệ sinh lao động, thủ khoa bảo hộ lao động">
+    <meta name="author" content="Nguyễn Ngọc Chiến">
+    
+    <meta property="og:title" content="Nguyễn Ngọc Chiến - ChienHSE | Giám sát An toàn lao động">
+    <meta property="og:description" content="Portfolio của Nguyễn Ngọc Chiến - Chuyên viên HSE kết hợp phân tích dữ liệu nhằm nâng cao an toàn sản xuất.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chienhse.vn">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -32,7 +38,7 @@
         }
     </script>
     <style>
-        /* Custom scrollbar for a polished look */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -50,62 +56,71 @@
 </head>
 <body class="font-sans text-gray-800 antialiased bg-white selection:bg-orange selection:text-white">
 
-    <!-- Navbar -->
     <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
                     <span class="font-bold text-2xl tracking-tighter text-navy">CHIEN<span class="text-orange">.HSE</span></span>
                 </div>
                 
-                <!-- Desktop Menu -->
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="text-gray-600 hover:text-orange font-medium transition-colors">About</a>
-                    <a href="#projects" class="text-gray-600 hover:text-orange font-medium transition-colors">Projects</a>
-                    <a href="#skills" class="text-gray-600 hover:text-orange font-medium transition-colors">Skills</a>
-                    <a href="#contact" class="text-gray-600 hover:text-orange font-medium transition-colors">Contact</a>
-                </nav>
+                <div class="flex items-center gap-6">
+                    <nav class="hidden md:flex space-x-8 items-center">
+                        <a href="#about" class="text-gray-600 hover:text-orange font-medium transition-colors" data-i18n="nav_about">About</a>
+                        <a href="#projects" class="text-gray-600 hover:text-orange font-medium transition-colors" data-i18n="nav_projects">Projects</a>
+                        <a href="#skills" class="text-gray-600 hover:text-orange font-medium transition-colors" data-i18n="nav_skills">Skills</a>
+                        <a href="#contact" class="text-gray-600 hover:text-orange font-medium transition-colors" data-i18n="nav_contact">Contact</a>
+                    </nav>
 
-                <!-- Mobile menu button (Simplified for single-file without complex JS) -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-600 hover:text-navy focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm font-bold text-navy transition-colors duration-300" id="label-en">EN</span>
+                        
+                        <button id="lang-toggle-btn" onclick="toggleLanguage()" class="relative w-14 h-7 flex items-center bg-gray-200 rounded-full p-1 cursor-pointer transition-colors duration-300 focus:outline-none border border-gray-300 hover:border-orange">
+                            <div id="toggle-thumb" class="w-5 h-5 bg-white rounded-full shadow-md transform translate-x-0 transition-transform duration-300 flex items-center justify-center z-10 overflow-hidden border border-gray-100">
+                                <img id="flag-icon" src="https://flagcdn.com/gb.svg" alt="English" class="w-full h-full object-cover">
+                            </div>
+                        </button>
+                        
+                        <span class="text-sm font-bold text-gray-400 transition-colors duration-300" id="label-vi">VN</span>
+                    </div>
+
+                    <div class="md:hidden flex items-center">
+                        <button class="text-gray-600 hover:text-navy focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="relative bg-navy pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Abstract Background element -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-orange/10 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left flex flex-col lg:flex-row items-center">
             <div class="lg:w-2/3">
-                <p class="text-orange font-semibold tracking-wider uppercase mb-3"><i class="fas fa-hard-hat mr-2"></i>Safety First. Data Driven.</p>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+                <p class="text-orange font-semibold tracking-wider uppercase mb-3">
+                    <i class="fas fa-hard-hat mr-2"></i><span data-i18n="hero_tagline">Safety First. Data Driven.</span>
+                </p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4" data-i18n="hero_name">
                     NGUYEN NGOC CHIEN
                 </h1>
-                <h2 class="text-xl sm:text-2xl text-gray-300 font-medium mb-6">
+                <h2 class="text-xl sm:text-2xl text-gray-300 font-medium mb-6" data-i18n="hero_role">
                     Valedictorian | HSE Supervisor | Data-Driven Safety
                 </h2>
-                <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_desc">
                     Transforming traditional safety management into digital intelligence using Power BI & ISO 45001.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="#projects" class="bg-orange hover:bg-[#e66000] text-white px-8 py-4 rounded-md font-bold text-lg transition-all shadow-lg shadow-orange/30 flex items-center justify-center gap-2">
-                        View Dashboard <i class="fas fa-arrow-right"></i>
+                        <span data-i18n="btn_dashboard">View Dashboard</span> <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#about" class="bg-transparent border-2 border-gray-500 hover:border-white text-white px-8 py-4 rounded-md font-bold text-lg transition-all flex items-center justify-center">
+                    <a href="#about" class="bg-transparent border-2 border-gray-500 hover:border-white text-white px-8 py-4 rounded-md font-bold text-lg transition-all flex items-center justify-center" data-i18n="btn_learn_more">
                         Learn More
                     </a>
                 </div>
             </div>
             
-            <!-- Optional Hero Graphic/Decoration -->
             <div class="lg:w-1/3 mt-16 lg:mt-0 hidden lg:block">
                 <div class="relative w-72 h-72 mx-auto">
                     <div class="absolute inset-0 border-4 border-orange rounded-full opacity-20 animate-pulse"></div>
@@ -118,17 +133,16 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-3xl font-bold text-navy mb-4 relative inline-block">
-                    About Me
+                    <span data-i18n="about_title">About Me</span>
                     <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-orange rounded"></span>
                 </h2>
                 <div class="mt-10 p-8 rounded-2xl bg-lightgray shadow-sm border border-gray-100 text-left relative overflow-hidden">
                     <i class="fas fa-quote-left text-6xl text-gray-200 absolute top-4 left-4 z-0"></i>
-                    <p class="text-lg text-gray-700 leading-relaxed relative z-10">
+                    <p class="text-lg text-gray-700 leading-relaxed relative z-10" data-i18n="about_content">
                         Graduated as the <strong>Top 1 Safety Engineering Student</strong> (GPA 3.66/4.0). With a strong foundation in legislation and risk assessment, I am bridging the gap between field safety and data analytics to minimize incidents in manufacturing environments.
                     </p>
                 </div>
@@ -136,55 +150,41 @@
         </div>
     </section>
 
-    <!-- Project Section -->
     <section id="projects" class="py-20 bg-lightgray">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-navy mb-4 relative inline-block">
-                    Interactive Safety Dashboard
+                    <span data-i18n="project_title">Interactive Safety Dashboard</span>
                     <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-orange rounded"></span>
                 </h2>
-                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="project_desc">
                     An interactive Power BI report tracking Key Performance Indicators (KPIs) like LTIFR, Near-misses, and Training Hours.
                 </p>
             </div>
 
-            <!-- CRITICAL: Responsive 16:9 Container for Power BI -->
             <div class="max-w-5xl mx-auto bg-white p-4 rounded-xl shadow-xl border border-gray-200">
                 <div class="relative w-full aspect-video bg-navy rounded-lg overflow-hidden flex flex-col items-center justify-center text-white group">
-                    
-                    <!-- POWER BI EMBED CODE GOES HERE -->
-                    <iframe title="Tự làm 1" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMjVkNjNmYzgtMzdjYi00NTZmLTgxNGUtZGE2ZjQ2NGNkMmVjIiwidCI6IjVlOGJjYjNiLTlhN2UtNDgzNi04N2FiLWNlYmJkNGNiM2I4MSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
-                    <!-- Placeholder Content (Will be replaced by iframe) -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-navy bg-opacity-90 z-10">
-                        <div class="w-20 h-20 bg-orange/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-chart-line text-4xl text-orange"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Dashboard Placeholder</h3>
-                        <p class="text-gray-400 text-sm max-w-sm text-center px-4">Insert your Power BI <code>&lt;iframe&gt;</code> code here to replace this placeholder.</p>
-                    </div>
+                    <iframe title="Tự làm 1" class="absolute inset-0 w-full h-full border-0" src="https://app.powerbi.com/view?r=eyJrIjoiMjVkNjNmYzgtMzdjYi00NTZmLTgxNGUtZGE2ZjQ2NGNkMmVjIiwidCI6IjVlOGJjYjNiLTlhN2UtNDgzNi04N2FiLWNlYmJkNGNiM2I4MSIsImMiOjEwfQ%3D%3D" allowFullScreen="true"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-navy mb-4 relative inline-block">
-                    Core Competencies
+                    <span data-i18n="skills_title">Core Competencies</span>
                     <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-orange rounded"></span>
                 </h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Card 1: Safety Management -->
                 <div class="bg-white rounded-xl shadow-lg border-t-4 border-orange p-8 hover:-translate-y-2 transition-transform duration-300">
                     <div class="w-14 h-14 bg-orange/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-shield-alt text-2xl text-orange"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy mb-4">Safety Management</h3>
+                    <h3 class="text-xl font-bold text-navy mb-4" data-i18n="skill_1_title">Safety Management</h3>
                     <ul class="space-y-3 text-gray-600">
                         <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> ISO 45001</li>
                         <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> OSHA 1910</li>
@@ -193,12 +193,11 @@
                     </ul>
                 </div>
 
-                <!-- Card 2: Data Analytics -->
                 <div class="bg-white rounded-xl shadow-lg border-t-4 border-navy p-8 hover:-translate-y-2 transition-transform duration-300">
                     <div class="w-14 h-14 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-chart-pie text-2xl text-navy"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy mb-4">Data Analytics</h3>
+                    <h3 class="text-xl font-bold text-navy mb-4" data-i18n="skill_2_title">Data Analytics</h3>
                     <ul class="space-y-3 text-gray-600">
                         <li class="flex items-center"><i class="fas fa-check-circle text-navy/70 mr-3 text-sm"></i> Microsoft Power BI</li>
                         <li class="flex items-center"><i class="fas fa-check-circle text-navy/70 mr-3 text-sm"></i> DAX Functions</li>
@@ -206,39 +205,36 @@
                     </ul>
                 </div>
 
-                <!-- Card 3: Soft Skills -->
                 <div class="bg-white rounded-xl shadow-lg border-t-4 border-orange p-8 hover:-translate-y-2 transition-transform duration-300">
                     <div class="w-14 h-14 bg-orange/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-users text-2xl text-orange"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy mb-4">Soft Skills</h3>
+                    <h3 class="text-xl font-bold text-navy mb-4" data-i18n="skill_3_title">Soft Skills</h3>
                     <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> Training & Coaching</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> English (B2)</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> Leadership</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> <span data-i18n="skill_training">Training & Coaching</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> <span data-i18n="skill_english">English (B2)</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-orange/70 mr-3 text-sm"></i> <span data-i18n="skill_leadership">Leadership</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact" class="bg-navy text-white pt-16 pb-8 border-t-4 border-orange">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-            <h2 class="text-2xl font-bold mb-6">Let's Connect</h2>
-            <p class="text-gray-400 text-center max-w-md mb-8">
+            <h2 class="text-2xl font-bold mb-6" data-i18n="footer_connect">Let's Connect</h2>
+            <p class="text-gray-400 text-center max-w-md mb-8" data-i18n="footer_desc">
                 Ready to elevate safety standards through data-driven insights in your manufacturing facility?
             </p>
             
             <div class="flex space-x-6 mb-12">
-                <!-- Phone Contact -->
                 <a href="tel:+84787489407" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange transition-colors group" title="Call Me">
                     <i class="fas fa-phone text-xl group-hover:text-white transition-colors"></i>
                 </a>
                 <a href="mailto:work.chien03@gmail.com" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange transition-colors group">
                     <i class="fas fa-envelope text-xl group-hover:text-white transition-colors"></i>
                 </a>
-                <a href="#" target="https://www.linkedin.com/in/chien-hse/" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0077b5] transition-colors group">
+                <a href="https://www.linkedin.com/in/chien-hse/" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0077b5] transition-colors group">
                     <i class="fab fa-linkedin-in text-xl group-hover:text-white transition-colors"></i>
                 </a>
             </div>
@@ -252,5 +248,109 @@
         </div>
     </footer>
 
+    <script>
+        const translations = {
+            en: {
+                nav_about: "About",
+                nav_projects: "Projects",
+                nav_skills: "Skills",
+                nav_contact: "Contact",
+                hero_tagline: "Safety First. Data Driven.",
+                hero_name: "NGUYEN NGOC CHIEN",
+                hero_role: "Valedictorian | HSE Supervisor | Data-Driven Safety",
+                hero_desc: "Transforming traditional safety management into digital intelligence using Power BI & ISO 45001.",
+                btn_dashboard: "View Dashboard",
+                btn_learn_more: "Learn More",
+                about_title: "About Me",
+                about_content: "Graduated as the <strong>Top 1 Safety Engineering Student</strong> (GPA 3.66/4.0). With a strong foundation in legislation and risk assessment, I am bridging the gap between field safety and data analytics to minimize incidents in manufacturing environments.",
+                project_title: "Interactive Safety Dashboard",
+                project_desc: "An interactive Power BI report tracking Key Performance Indicators (KPIs) like LTIFR, Near-misses, and Training Hours.",
+                skills_title: "Core Competencies",
+                skill_1_title: "Safety Management",
+                skill_2_title: "Data Analytics",
+                skill_3_title: "Soft Skills",
+                skill_training: "Training & Coaching",
+                skill_english: "English (B2)",
+                skill_leadership: "Leadership",
+                footer_connect: "Let's Connect",
+                footer_desc: "Ready to elevate safety standards through data-driven insights in your manufacturing facility?"
+            },
+            vi: {
+                nav_about: "Giới thiệu",
+                nav_projects: "Dự án",
+                nav_skills: "Kỹ năng",
+                nav_contact: "Liên hệ",
+                hero_tagline: "An toàn là trên hết. Định hướng dữ liệu.",
+                hero_name: "NGUYỄN NGỌC CHIẾN",
+                hero_role: "Thủ khoa | Giám sát HSE | An toàn hướng dữ liệu",
+                hero_desc: "Chuyển đổi quản lý an toàn truyền thống sang trí tuệ số sử dụng Power BI & ISO 45001.",
+                btn_dashboard: "Xem Dashboard",
+                btn_learn_more: "Tìm hiểu thêm",
+                about_title: "Về tôi",
+                about_content: "Tốt nghiệp <strong>Thủ khoa ngành Kỹ thuật Bảo hộ lao động</strong> (GPA 3.66/4.0). Với nền tảng vững chắc về luật pháp và đánh giá rủi ro, tôi kết nối an toàn hiện trường với phân tích dữ liệu để giảm thiểu tai nạn trong môi trường sản xuất.",
+                project_title: "Bảng dữ liệu An toàn tương tác",
+                project_desc: "Báo cáo Power BI tương tác theo dõi các Chỉ số Hiệu suất Chính (KPI) như LTIFR, Cận nguy (Near-misses) và Giờ đào tạo.",
+                skills_title: "Năng lực cốt lõi",
+                skill_1_title: "Quản lý An toàn",
+                skill_2_title: "Phân tích dữ liệu",
+                skill_3_title: "Kỹ năng mềm",
+                skill_training: "Đào tạo & Huấn luyện",
+                skill_english: "Tiếng Anh (B2)",
+                skill_leadership: "Lãnh đạo",
+                footer_connect: "Kết nối",
+                footer_desc: "Sẵn sàng nâng cao tiêu chuẩn an toàn thông qua dữ liệu tại nhà máy của bạn?"
+            }
+        };
+
+        let currentLang = 'en'; // Default
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'vi' : 'en';
+            updateContent();
+            updateToggleUI();
+        }
+
+        function updateToggleUI() {
+            const thumb = document.getElementById('toggle-thumb');
+            const flagIcon = document.getElementById('flag-icon');
+            const labelEn = document.getElementById('label-en');
+            const labelVi = document.getElementById('label-vi');
+            const toggleBtn = document.getElementById('lang-toggle-btn');
+
+            if (currentLang === 'vi') {
+                thumb.classList.remove('translate-x-0');
+                thumb.classList.add('translate-x-7');
+                
+                // Dùng file SVG để độ phân giải được sắc nét
+                flagIcon.src = "https://flagcdn.com/vn.svg";
+                flagIcon.alt = "Vietnamese";
+                
+                labelEn.classList.replace('text-navy', 'text-gray-400');
+                labelVi.classList.replace('text-gray-400', 'text-navy');
+                toggleBtn.classList.replace('bg-gray-200', 'bg-orange/20');
+            } else {
+                thumb.classList.remove('translate-x-7');
+                thumb.classList.add('translate-x-0');
+                
+                // Dùng file SVG
+                flagIcon.src = "https://flagcdn.com/gb.svg";
+                flagIcon.alt = "English";
+                
+                labelVi.classList.replace('text-navy', 'text-gray-400');
+                labelEn.classList.replace('text-gray-400', 'text-navy');
+                toggleBtn.classList.replace('bg-orange/20', 'bg-gray-200');
+            }
+        }
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
 </body>
 </html>
