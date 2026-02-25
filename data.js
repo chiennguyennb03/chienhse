@@ -84,7 +84,7 @@ const translations = {
         skill_1_title: "Quản lý An toàn",
         skill_1_list: `
             <li class="flex items-center"><i class="fas fa-check-circle text-primary/70 mr-3 text-sm"></i> ISO 45001</li>
-            <li class="flex items-center"><i class="fas fa-check-circle text-primary/70 mr-3 text-sm"></i> OSHA 1910</li>
+            // <li class="flex items-center"><i class="fas fa-check-circle text-primary/70 mr-3 text-sm"></i> OSHA 1910</li>
             <li class="flex items-center"><i class="fas fa-check-circle text-primary/70 mr-3 text-sm"></i> HIRA</li>
             <li class="flex items-center"><i class="fas fa-check-circle text-primary/70 mr-3 text-sm"></i> JSA</li>`,
         skill_2_title: "Phân tích dữ liệu",
@@ -105,5 +105,6 @@ const translations = {
     }
 
 };
+
 
 
