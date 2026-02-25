@@ -2,7 +2,7 @@
 // 🎨 1. CÀI ĐẶT MÀU SẮC (THEME COLORS)
 // ==========================================
 const THEME_COLORS = {
-    primary: '##BCDFFF',   // Màu chủ đạo xanh
+    primary: '#BCDFFF',    // Màu chủ đạo xanh
     // primary: '#FF6B00',    // Màu chủ đạo (Cam)
     secondary: '#0A192F',  // Màu nền tối/nhấn (Xanh Navy)
     lightgray: '#F3F4F6'   // Màu nền xám nhạt
@@ -105,3 +105,4 @@ const translations = {
     }
 
 };
+
