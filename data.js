@@ -3,7 +3,7 @@
 // ==========================================
 const THEME_COLORS = {
     primary: '#70BBFF',    // Màu chủ đạo xanh
-    // primary: '#FF6B00',    // Màu chủ đạo (Cam)
+    primary: '#FF6B00',    // Màu chủ đạo (Cam)
     secondary: '#0A192F',  // Màu nền tối/nhấn (Xanh Navy)
     lightgray: '#F3F4F6'   // Màu nền xám nhạt
 };
