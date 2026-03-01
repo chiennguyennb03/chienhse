@@ -1,119 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
-  <link href="/assets/css/jekyllthemes.css" rel="stylesheet" />
-  <link href="/assets/css/syntax.css" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
+
+<title>{{ page.title }} | {{site.name}}</title>
+
+{% seo %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
+
+<link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
+
+<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+
 </head>
 
+{% if jekyll.environment == 'production' %}
+<!-- change your GA id in _config.yml -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', '{{site.google_analytics}}', 'auto');
+ga('send', 'pageview');
+</script>
+{% endif %}
 
-<body>
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+<body class="{{layout}}">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
 
 
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-735643-13', 'jekyllthemes.org');
-    ga('send', 'pageview');
-  </script>
+    <div class="container pr-0">
 
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="{{ site.baseurl }}/">
+    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+    </a>
+    <!-- End Logo -->
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <header id="header">
-    <div class="wrap">
+    <div class="collapse navbar-collapse" id="navbarMediumish">
 
-      <h1 id="logo"><a href="/">{{ site.name }}</a></h1>
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                {% if page.url == "/" %}
+                <li class="nav-item active">
+                {% else %}
+                <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
+                {% include search-lunr.html %}
+
+            </ul>
+
+        <!-- End Menu -->
 
     </div>
-  </header>
-
-
-
-  <div id="pagecontainer" class="container">
-
-
-
-    <!--<div class="hero-unit">
-      <p><strong>Need a design for your <a href="http://jekyllrb.com/">Jekyll</a> blog?</strong> Whether you're looking for a fresh theme to drop in and go, or to use as a starting point for customization, you'll find the best ones available right here.</p>
-    </div>-->
-
-
-
-    <div class="widebanner row">
-      <div class="span12">
-        <div class="banner72" id="banner72">
-
-          <script type="text/javascript"><!--
-
-            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-            google_ad_client = "ca-pub-7611360452853908";
-
-            if (width > 769) {
-              google_ad_slot = "6552835850";
-              google_ad_width = 728;
-              google_ad_height = 90;
-            } else {
-              var el = document.getElementById("banner72");
-              el.parentNode.removeChild(el);
-            }
-
-            //-->
-          </script>
-          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-
-        </div>
-      </div>
-    </div>
-
-
-
-    <div id="content">
-
-
-        {{ content }}
-
 
     </div>
+</nav>
+<!-- End Navigation
+================================================== -->
 
+<div class="site-content">
 
-  </div>
+<div class="container">
 
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">{{ site.name }}</h1>
+    <p class="lead">
+        {{ site.description }}
+    </p>
+</div>
 
+<!-- Content
+================================================== -->
+<div class="main-content">
+    {{ content }}
+</div>
 
-  <footer id="footer">
+{% if site.mailchimp-list %}
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+{% endif %}
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            {% assign categories_list = site.categories %}
+            {% if categories_list.first[0] == null %}
+                {% for category in categories_list %}
+                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }} ({{ site.tags[category].size }})</a>
+                {% endfor %}
+            {% else %}
+                {% for category in categories_list %}
+                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }} ({{ category[1].size }})</a>
+                {% endfor %}
+            {% endif %}
+            {% assign categories_list = nil %}
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
     <div class="container">
-      <div class="row">
-
-        <div class="span5 copyright">
-          Copyright &copy; {{ site.time | date: '%Y' }} Matt Harzewski. Powered by <a href="http://jekyllrb.com">Jekyll</a>.
-          <br /><br />
-          <iframe src="http://ghbtns.com/github-btn.html?user=mattvh&repo=jekyllthemes&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-          <iframe src="http://ghbtns.com/github-btn.html?user=mattvh&repo=jekyllthemes&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-          <br /><br />
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © {{ site.time | date: "%Y" }} {{ site.name }} 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish Jekyll Theme</a> by WowThemes.net
+            </div>
         </div>
-
-        <div class="span7">
-          <h3>Want to Submit a Theme?</h3>
-          <ul>
-            <li>Fork <a href="https://github.com/mattvh/jekyllthemes" target="_blank">our site</a> on GitHub</li>
-            <li>Create a new post in the <code>_posts</code> directory and fill out the relevant YAML fields</li>
-            <li>Make a 250x200 thumbnail and drop it in the <code>thumbnails</code> directory. List its filename in the post's markdown file.</li>
-            <li>Test it out, then push your changes up and open a pull request.</li>
-          </ul>
-        </div>
-
-      </div>
     </div>
-  </footer>
+</footer>
+<!-- End Footer
+================================================== -->
 
+</div> <!-- /.site-content -->
 
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
+
+{% if site.lazyimages == "enabled" %}
+<script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
+{% endif %}
+
+<script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+{% if page.layout == 'post' %}
+<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+{% endif %}
 
 </body>
 </html>
